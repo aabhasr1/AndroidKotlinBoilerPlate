@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.aabhasjindal.arch.androidkotlinboilerplate"
+        minSdkVersion 22
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            debuggable true
+        }
+
+        flavorDimensions "tier"
+        productFlavors {
+            demo {
+                dimension "tier"
+                applicationIdSuffix ".demo"
+                versionNameSuffix "-demo"
+            }
+            full {
+                dimension "tier"
+                applicationIdSuffix ".full"
+                versionNameSuffix "-full"
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    implementation 'com.android.support:support-annotations:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+
+    //retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.4.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.4.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+
+
+    // Architecture components
+    compile "android.arch.lifecycle:extensions:1.1.1"
+    compile "android.arch.lifecycle:common-java8:1.1.1"
+    compile "android.arch.lifecycle:reactivestreams:1.1.1"
+    compile "android.arch.persistence.room:runtime:1.1.0"
+    compile "android.arch.persistence.room:rxjava2:1.1.0"
+    kapt 'android.arch.persistence.room:compiler:1.1.0'
+
+    //rxJava
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+
+    //dagger
+    compile 'com.google.dagger:dagger:2.15'
+    compile 'com.google.dagger:dagger-android:2.15'
+    compile 'com.google.dagger:dagger-android-support:2.15'
+    kapt 'com.google.dagger:dagger-compiler:2.15'
+    kapt 'com.google.dagger:dagger-android-processor:2.15'
+
+    //utils
+    compile 'com.jakewharton.timber:timber:4.6.0'
+
+    //error and Crash Reporting
+    compile 'io.sentry:sentry-android:1.7.5'
+
+    //build specific dependencies
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5.4'
+}
