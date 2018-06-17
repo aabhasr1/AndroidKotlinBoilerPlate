@@ -12,14 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".views.main.MainActivity">
+        <activity android:name=".views.main.MainActivity" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="2c3c83d54f4d24d25f9a8bb96d12e8fd581e84aa" />
+
+        <activity android:name=".views.test.TestActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data android:name="io.fabric.ApiKey" android:value="2c3c83d54f4d24d25f9a8bb96d12e8fd581e84aa"/>
     </application>
 
 </manifest>

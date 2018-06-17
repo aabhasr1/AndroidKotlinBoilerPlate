@@ -8,5 +8,6 @@ import dagger.android.support.DaggerAppCompatActivity
 open class BaseActivity : DaggerAppCompatActivity() {
     override fun setContentView(layoutResID: Int) {
         super.setContentView(layoutResID)
+        title = "Test App"
     }
 }
