@@ -1,6 +1,5 @@
 package com.aabhasjindal.arch.androidkotlinboilerplate.views.main
 
-import android.arch.lifecycle.MutableLiveData
 import com.aabhasjindal.arch.androidkotlinboilerplate.common.BaseViewModel
 import com.aabhasjindal.arch.androidkotlinboilerplate.common.rx2.CompositeDisposableProvider
 import com.aabhasjindal.arch.androidkotlinboilerplate.data.repositories.MainRepository
