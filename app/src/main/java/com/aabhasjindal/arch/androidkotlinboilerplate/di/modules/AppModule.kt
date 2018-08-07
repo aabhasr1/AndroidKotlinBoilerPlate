@@ -1,4 +1,4 @@
-package com.aabhasjindal.arch.androidkotlinboilerplate.di.module
+package com.aabhasjindal.arch.androidkotlinboilerplate.di.modules
 
 import dagger.Module
 
